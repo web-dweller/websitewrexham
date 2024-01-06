@@ -95,3 +95,12 @@ button:hover {
         height: 200px; /* Smaller textarea in smaller screens */
     }
 }
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    width: 25%;
+}

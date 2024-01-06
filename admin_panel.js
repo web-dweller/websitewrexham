@@ -1,3 +1,12 @@
+const deleteEvent = async (eventId) => {
+    const formData = new FormData();
+    formData.append("eventId", eventId);
+    return await fetch("remove_event_by_id.php", {
+        method: "POST",
+        body: formData,
+    }).then(()=> location.reload())
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // Generalized function for handling form submissions
     function handleFormSubmission(formId, url, responseDivId) {
@@ -32,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize form submission handlers
     handleFormSubmission("addEventForm", "add_event.php", "addEventResponse");
-    handleFormSubmission("removeEventForm", "remove_event_by_id.php", "removeEventResponse");
     handleFormSubmission("sendNewsletterForm", "email_sub.php", "sendNewsletterResponse");
 
 
@@ -41,22 +49,36 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("list_events.php")
             .then((response) => response.json())
             .then((data) => {
-                var eventsListDiv = document.getElementById("eventsList");
-                eventsListDiv.innerHTML = ""; // Clear current list
+                const eventsTable = document.getElementById("eventsList");
+                let eventsTableBody = "";
+                eventsTable.innerHTML = "Loading data..."; // Clear current list
                 data.forEach((event) => {
-                    eventsListDiv.innerHTML +=
-                        "<p>" +
-                        "id:" +
-                        event.id +
-                        ",  " +
-                        event.event_name +
-                        " on " +
-                        event.event_date +
-                        ', Description: "' +
-                        event.event_desc +
-                        '"' +
-                        "</p>"; // Append each event
+                    eventsTableBody += `
+                        <tr>
+                            <td>${event.id}</td>
+                            <td>${event.event_name}</td>
+                            <td>${event.event_date}</td>
+                            <td>${event.event_desc}</td>
+                            <td>
+                                <button 
+                                    onclick="deleteEvent(${event.id})" 
+                                    style="background-color: red">DELETE
+                                </button>
+                            </td>
+                        </tr>
+                    `
                 });
+                eventsTable.innerHTML = `
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                        ${eventsTableBody}
+                    </table>`
             })
             .catch((error) => console.error("Error:", error));
     }
