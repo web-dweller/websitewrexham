@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login to Admin Panel</title>
+  <link rel="stylesheet" href="admin_panel.css">
+  <style>
+    /* Additional CSS for centering the login box */
+    .login-container {
+      width: 300px;
+      margin: 100px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container button {
+      display: block; /* Allows margin auto to be applied */
+      width: fit-content; /* Fits the content of the button */
+      margin: 10px auto; /* Top and bottom margins with auto horizontal margins */
+      padding: 10px 25px; /* Adjust padding as needed */
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login to Admin Page</h2>
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<script src="admin_login.js"></script>
+</body>
+</html>

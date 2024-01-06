@@ -1,0 +1,97 @@
+/* Basic Reset */
+
+.button-response-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    gap: 10px; /* Adds some space between the button and the response text */
+    flex-wrap: nowrap; /* Prevents wrapping of items */
+}
+
+.button-response-container .response p {
+    display: inline; /* Makes <p> tags inline elements */
+    margin: 0; /* Removes default margin of <p> tags */
+    padding: 0; /* Adjust padding as needed */
+}
+
+.button-response-container button {
+    flex-grow: 0; /* Button does not grow */
+    flex-shrink: 0; /* Button does not shrink */
+    margin-top: 10px;
+}
+
+.button-response-container .response {
+    flex-grow: 1; /* Response div takes up remaining space */
+    margin-top: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+#newsletterFeedback {
+    margin-top: 10px;
+    color: #31708f;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    textarea {
+        height: 200px; /* Smaller textarea in smaller screens */
+    }
+}
