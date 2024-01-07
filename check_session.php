@@ -2,7 +2,7 @@
     include 'websitedb_connection.php';
     include 'session.php';
 
-    $SESSION_EXPIRATION_SECS = 10;
+    $SESSION_EXPIRATION_SECS = 600;
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $session_id = $_POST["session_id"];

@@ -1,5 +1,4 @@
 <?php
-    $SESSION_EXPIRATION_SECS = 30;
 
     function getRandomStringSha1($length = 16)
     {

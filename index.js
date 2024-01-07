@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(data);
           let responseDiv = document.getElementById("addEventResponse");
           responseDiv.innerHTML = `<p style="${
-            data.status === "success"
-              ? "color: green;" : "color: red;"
+            data.status === "success" ? "color: green;" : "color: red;"
           }">
           ${data.message}</p>`;
 
@@ -38,10 +37,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         const contentDiv = document.getElementById("upcomingEventsContent");
         let contentHtml = "";
-        // Assuming 'data' is an array of events
+        data = data.sort((ev1, ev2) => {
+          let dateA = new Date(ev1.event_date);
+          let dateB = new Date(ev2.event_date);
+          return dateA - dateB;
+        });
+        let today = new Date().toISOString().slice(0, 10);
         data.forEach((event) => {
-          // Modify this template to match your data structure and desired HTML format
-          contentHtml += `<p>${event.event_name} - ${event.event_date}</p>`;
+          contentHtml += `<p style="${
+            event.event_date === today ? "color: green;" : "color: black;"
+          }">${event.event_name} - ${event.event_date}</p>`;
         });
         contentDiv.innerHTML = contentHtml;
       })
