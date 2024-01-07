@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Assuming the data object contains a 'status' and 'message'
                     if (data.status === "success") {
                         // Redirect to the admin panel or another page upon successful login
+                        localStorage.setItem("session_id", data.session_id)
                         window.location.href = "admin_panel.html"; // Replace with the correct URL
                     } else {
                         // Show the error message
