@@ -570,7 +570,7 @@
 	}
 
 	a {
-		color: yellow;
+		color: #ED1A25;
 	}
 
 	a:hover {
@@ -624,6 +624,7 @@
 		border-radius: 0 3px 3px 0;
 		user-select: none;
 		box-sizing:border-box;
+		background-color: #ED1A25;
 	}
 
 	/* Position the "next button" to the right */
