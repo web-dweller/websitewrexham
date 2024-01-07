@@ -3,9 +3,9 @@ include 'websitedb_connection.php';
 
 $conn = OpenCon();
 
-$first_name = 'Greg1';
-$last_name = 'Grim1';
-$email = 'grimy.grigory1@gmail.com';
+$first_name = 'Andrii';
+$last_name = 'Synelnyk';
+$email = 'sinelnik67@gmail.com';
 
 // SQL query to insert a new row
 $sql = "INSERT INTO email (email, first_name, last_name) VALUES (?, ?, ?)";
