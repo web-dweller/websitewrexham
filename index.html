@@ -92,23 +92,8 @@
         <div class="column">
             <div class="section section-wrapper2">
                 <h3 class="subtitle">Upcoming events</h3>
-                <div class="content">
-                    <p> Y Saith Seren <br>
-
-                        Canolfan Gymraeg Wrecsam <br>
-
-                        18 Chester Street <br>
-
-                        Wrecsam <br>
-
-                        LL13 8BG <br>
-
-                        01978 447006 <br>
-
-                        Chair (C. Evans) 07885567512 <br>
-
-                        Facebook - https://www.facebook.com/saithseren1
-                    </p>
+                <div class="content" id="upcomingEventsContent">
+                    <!-- Data will be loaded here -->
                 </div>
             </div>
         </div>
@@ -118,10 +103,11 @@
             <div class="section section-wrapper2">
                 <h3 class="subtitle">Newsletter signup</h3>
                 <div class="content">
-                    <form method="post" action="#">
-                        <input type="text" class="text" name="name" placeholder="Name">
-                        <input type="text" class="text" name="email" placeholder="Email">
-                        <a href="#" class="button email-button">Sign up</a>
+                    <form method="post" action="#" class="newsletter-signup-form">
+                        <input type="text" class="text" name="firstName" placeholder="First Name">
+                        <input type="text" class="text" name="lastName" placeholder="Last Name">
+                        <input type="email" class="text" name="email" placeholder="Email">
+                        <input type="submit" class="button email-button" value="Sign up">
                     </form>
                 </div>
             </div>
@@ -154,5 +140,8 @@
         Powered by: <a href="https://templated.co/">TEMPLATED</a>
     </div>
 </div>
+
+<script src="index.js"></script>
+
 </body>
 </html>

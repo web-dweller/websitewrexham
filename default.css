@@ -290,11 +290,17 @@
 	.email-button {
 		font-size: 1.0em;
 		text-align: center;
-		width: 20%;
+		width: 30%;
 		display: block; /* Make the button a block element */
 		margin-top: 20px; /* Add space above the button */
 		margin-left: auto; /* Center the button */
 		margin-right: auto; /* Center the button */
+
+		outline: none;
+	}
+
+	.button.email-button {
+		cursor: pointer;
 	}
 	
 	.button:before
