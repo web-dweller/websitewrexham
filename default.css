@@ -122,6 +122,9 @@
 				font-family: 'Source Sans Pro', sans-serif;
 				font-size: 1em;
 				outline: none;
+
+				color: black; /* Ensure input text is black */
+				text-align: left; /* Align text to the left */
 			}
 
 				form input.text:hover,
