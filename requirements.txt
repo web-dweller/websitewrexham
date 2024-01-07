@@ -1,1 +1,1 @@
--PHPMailer library
+-PHPMailer version 6.9.1
