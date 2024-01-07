@@ -16,10 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let responseDiv = document.getElementById("addEventResponse");
           responseDiv.innerHTML = `<p style="${
             data.status === "success"
-              ? "color: green;"
-              : data.status === "duplicate"
-              ? "color: yellow;"
-              : "color: red;"
+              ? "color: green;" : "color: red;"
           }">
           ${data.message}</p>`;
 

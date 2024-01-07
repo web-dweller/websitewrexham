@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $first_name = $_POST["firstName"];
     $last_name = $_POST["lastName"];
     $email = $_POST["email"];
-    if(!EmailExists($email)){
+    if(!EmailExists($email, $conn)){
         // SQL query to insert a new row
         $sql = "INSERT INTO email (email, first_name, last_name) VALUES (?, ?, ?)";
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($stmt->execute()) {
             echo json_encode(array('status' => 'success', 'message' => "Subscribed successfully")); 
         } else {
-            echo json_encode(array('status' => 'error', 'message' => 'DB query error:' . $stmt->error));
+            echo json_encode(array('status' => 'error', 'message' => 'DB query error'));
         }
         $stmt->close();
     } else {
