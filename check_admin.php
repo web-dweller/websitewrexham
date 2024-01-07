@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Check if the query was successful
     if ($storedPassword !== null && $storedPassword === $hashedPassword) {
-        echo json_encode(array('status' => 'success', 'message' => 'Succesfully logged in'));
+        echo json_encode(array('status' => 'success', 'message' => 'Successfully logged in'));
     } else {
          echo json_encode(array('status' => 'error', 'message' => 'Invalid login or password'));
     }

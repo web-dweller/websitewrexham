@@ -3,7 +3,7 @@ include 'websitedb_connection.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'C:/xampp/composer/vendor/autoload.php';
+require '/Applications/XAMPP/xamppfiles/composer/vendor/autoload.php';
 
 $conn = OpenCon();
 //echo "Connected Successfully<br>";
@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Send the email
         $mail->send();
         $mail->clearAddresses();
+
         // Console debug (also sends email)
 //        if ($mail->send()) {
 //            echo "Email sent to " . $subscriber['email'] . "<br>";
