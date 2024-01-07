@@ -1,3 +1,5 @@
+const SESSION_EXPIRATION_TIME = 3600;
+
 const deleteEvent = async (eventId) => {
   const formData = new FormData();
   formData.append("eventId", eventId);
@@ -7,8 +9,40 @@ const deleteEvent = async (eventId) => {
   }).then(() => location.reload());
 };
 
+
+const redirectToLogin = () => {
+    window.location.href = "admin_login.html";
+}
+
+const checkSession = async () => {
+    let sessionId = localStorage.getItem("session_id");
+    if (!sessionId){
+        console.log('no session id')
+        return redirectToLogin()
+    }
+    console.log(`session_id=${sessionId}`)
+    const formData = new FormData();
+    formData.append("session_id", sessionId);
+    return await fetch("check_session.php", {
+        method: "POST",
+        body: formData,
+    }).then((response) => {
+        if (response.status !== 200){
+            console.error(response.status)
+            localStorage.removeItem("session_id");
+            redirectToLogin()
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Generalized function for handling form submissions
+
+  checkSession() &&
+  setInterval(async ()=>{
+      await checkSession()
+  }, 5000)
+
   function handleFormSubmission(formId, url, responseDivId) {
     document
       .getElementById(formId)

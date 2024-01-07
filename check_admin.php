@@ -1,5 +1,7 @@
 <?php
 include 'websitedb_connection.php';
+include 'session.php';
+
 $conn = OpenCon();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -14,15 +16,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $query->execute();
     $query->bind_result($storedPassword);
     $query->fetch();
-
+    $query->close();
 
     // Check if the query was successful
     if ($storedPassword !== null && $storedPassword === $hashedPassword) {
-        echo json_encode(array('status' => 'success', 'message' => 'Successfully logged in'));
+        $session_id = createSession($conn);
+        echo json_encode(array('status' => 'success',
+                               'message' => 'Successfully logged in',
+                               'session_id' => $session_id));
     } else {
          echo json_encode(array('status' => 'error', 'message' => 'Invalid login or password'));
     }
-    $query->close();
 
 } else {
     // Handle other HTTP methods or show an error

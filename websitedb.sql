@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Час створення: Січ 05 2024 р., 23:32
--- Версія сервера: 10.4.32-MariaDB
--- Версія PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Jan 07, 2024 at 07:51 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База даних: `websitedb`
+-- Database: `websitedb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп даних таблиці `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `login`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `login`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `email`
+-- Table structure for table `email`
 --
 
 CREATE TABLE `email` (
@@ -54,17 +54,18 @@ CREATE TABLE `email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп даних таблиці `email`
+-- Dumping data for table `email`
 --
 
 INSERT INTO `email` (`email_id`, `email`, `first_name`, `last_name`) VALUES
 (1, 'sinelnik67@gmail.com', 'Andrii', 'Synelnyk'),
-(3, 'grimy.grigory1@gmail.com', 'Greg1', 'Grim1');
+(3, 'grimy.grigory1@gmail.com', 'Greg1', 'Grim1'),
+(4, 'kirill.grim@gmail.com', 'test', 'test');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
@@ -75,7 +76,7 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп даних таблиці `events`
+-- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `event_name`, `event_desc`, `event_date`) VALUES
@@ -85,49 +86,66 @@ INSERT INTO `events` (`id`, `event_name`, `event_desc`, `event_date`) VALUES
 (4, 'Seminar', 'Marketing strategies seminar', '2024-04-25'),
 (5, 'Party', 'Company anniversary celebration', '2024-05-30');
 
+-- --------------------------------------------------------
+
 --
--- Індекси збережених таблиць
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(20) NOT NULL,
+  `creation_time` int(11) NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Індекси таблиці `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Індекси таблиці `email`
+-- Indexes for table `email`
 --
 ALTER TABLE `email`
   ADD PRIMARY KEY (`email_id`);
 
 --
--- Індекси таблиці `events`
+-- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для збережених таблиць
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблиці `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT для таблиці `email`
+-- AUTO_INCREMENT for table `email`
 --
 ALTER TABLE `email`
-  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблиці `events`
+-- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
