@@ -3,7 +3,7 @@ include '../websitedb_connection.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../../../composer/vendor/autoload.php';
+require '/Applications/XAMPP/xamppfiles/composer/vendor/autoload.php';
 
 $conn = OpenCon();
 //echo "Connected Successfully<br>";
