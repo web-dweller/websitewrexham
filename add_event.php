@@ -18,11 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Execute the statement
     $stmt->execute();
     echo json_encode(array('status' => 'success', 'message' => 'Event Added'));
-//    if ($stmt->execute()) {
-//        echo "New row added successfully";
-//    } else {
-//        echo "Error adding new row: " . $stmt->error;
-//    }
 } else {
     // Handle other HTTP methods or show an error
     http_response_code(405); // Method Not Allowed

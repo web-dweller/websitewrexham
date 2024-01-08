@@ -3,7 +3,7 @@ include 'websitedb_connection.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/Applications/XAMPP/xamppfiles/composer/vendor/autoload.php';
+require '../../composer/vendor/autoload.php';
 
 $conn = OpenCon();
 //echo "Connected Successfully<br>";
@@ -39,8 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $subject = "News for you!";
     $sender = "test.wrexham@gmail.com\r\n";
     
-    $unsubscribeURL = 'https://localhost/myWebsite/unsubscribe.php?email=' . urlencode("[subscriber_email]");
-    
+    $unsubscribeURL = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . '://' . $_SERVER['HTTP_HOST'] . str_replace('email_sub.php','unsubscribe.php?email=',$_SERVER['REQUEST_URI']) . urlencode("[subscriber_email]");
     $content = "Hello [subscriber_name],<br><br>";
     $content .= $main_content;
     $content .= "<br><br>"; 
