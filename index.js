@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
 
       var formData = new FormData(form);
-      fetch("subscribe.php", {
+      fetch("subscribtion/subscribe.php", {
         method: "POST",
         body: formData,
       })
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to load and display upcoming events
   function loadUpcomingEvents() {
-    fetch("list_events.php")
+    fetch("events/list_events.php")
       .then((response) => response.json())
       .then((data) => {
         const contentDiv = document.getElementById("upcomingEventsContent");
@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
   handleNewsletterSignup();
 });
 
-
 /*********************************************************************************/
 /* Carousel Logic                                                                */
 /*********************************************************************************/
@@ -74,26 +73,30 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-    showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
