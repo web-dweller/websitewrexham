@@ -11,12 +11,6 @@
 		font-weight: 400;
 		color: #000000;
 	}
-
-	/* Responsive Image */
-	.image.fit img {
-		width: 100%;
-		height: auto;
-	}
 	
 	h1, h2, h3
 	{
@@ -181,93 +175,17 @@
 /* Image Style                                                                   */
 /*********************************************************************************/
 
-	.image
-	{
-		display: inline-block;
-		border: 1px solid rgba(0,0,0,.1);
-	}
-	
-	.image img
-	{
-		display: block;
-		width: 100%;
-	}
-	
-	.image-full
-	{
-		display: block;
-		width: 100%;
-		margin: 0 0 3em 0;
-	}
-	
-	.image-left
-	{
-		float: left;
-		margin: 0 2em 2em 0;
-	}
-	
-	.image-centered
-	{
-		display: block;
-		margin: 0 0 2em 0;
-	}
-	
-	.image-centered img
-	{
-		margin: 0 auto;
-		width: auto;
-	}
+
 
 /*********************************************************************************/
 /* List Styles                                                                   */
 /*********************************************************************************/
 
-	ul.style1
-	{
-	}
 
 
 /*********************************************************************************/
 /* Social Icon Styles                                                            */
 /*********************************************************************************/
-
-	ul.contact
-	{
-		margin: 0;
-		padding: 2em 0em 0em 0em;
-		list-style: none;
-	}
-	
-	ul.contact li
-	{
-		display: inline-block;
-		padding: 0em 0.30em;
-		font-size: 1.5em;
-	}
-	
-	ul.contact li span
-	{
-		display: none;
-		margin: 0;
-		padding: 0;
-	}
-	
-	ul.contact li a
-	{
-		color: #FFF;
-	}
-	
-	ul.contact li a:before
-	{
-		display: inline-block;
-		background: #333333;
-		width: 80px;
-		height: 80px;
-		line-height: 80px;
-		border-radius: 40px;
-		text-align: center;
-		color: #FFFFFF;
-	}
 	
 
 /*********************************************************************************/
@@ -332,25 +250,6 @@
 /* Heading Titles                                                                */
 /*********************************************************************************/
 
-	.title
-	{
-		margin-bottom: 3em;
-	}
-	
-	.title h2
-	{
-		font-size: 2.8em;
-		color: rgba(255,255,255,0.9);
-	}
-	
-	.title .byline
-	{
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		font-weight: 400;
-		font-size: 1.1em;
-		color: #6F6F6F;
-	}
 
 /*********************************************************************************/
 /* Header                                                                        */
@@ -451,8 +350,10 @@
 		color: #FFF;
 	}
 	
-	#menu li:hover a, #menu li.active a, #menu li.active span
+	#menu li:hover a
 	{
+		background: rgba(237, 18, 37, 0.3);
+		border-radius: 8px;
 	}
 	
 	#menu .current_page_item a
@@ -467,9 +368,6 @@
 /* Banner                                                                        */
 /*********************************************************************************/
 
-	#banner
-	{
-	}
 
 /*********************************************************************************/
 /* Wrapper                                                                       */
@@ -549,8 +447,6 @@
 
 	@media only screen and (max-width: 768px) {
 		/* Stack the sections on top of each other on smaller screens */
-
-
 		.column {
 			flex-basis: 100%; /* Each column takes full width */
 		}
@@ -705,50 +601,21 @@
 /* Welcome                                                                       */
 /*********************************************************************************/
 
-	#welcome
-	{
-		overflow: hidden;
-		padding: 8em 0em;
-		text-align: center;
-		color: rgba(255,255,255,0.3);
-	}
-	
-	#welcome .content
-	{
-		padding: 0em 8em;
-	}
-	
-	
-	
-	#welcome a,
-	#welcome strong
-	{
-		color: rgba(255,255,255,0.6);
-	}
 
 /*********************************************************************************/
 /* Page                                                                          */
 /*********************************************************************************/
 
-	#page
-	{
-	}
 
 /*********************************************************************************/
 /* Content                                                                       */
 /*********************************************************************************/
 
-	#content
-	{
-	}
 
 /*********************************************************************************/
 /* Sidebar                                                                       */
 /*********************************************************************************/
 
-	#sidebar
-	{
-	}
 
 /*********************************************************************************/
 /* Footer                                                                        */
@@ -769,117 +636,22 @@
 /* Copyright                                                                     */
 /*********************************************************************************/
 
-	#copyright
-	{
-		text-align: center;
-		overflow: hidden;
-		padding: 5em 0em;
-		border-top: 1px solid rgba(255,255,255,0.08);
-	}
-	
-	#copyright p
-	{
-		letter-spacing: 0.20em;
-		text-align: center;
-		text-transform: uppercase;
-		font-size: 0.80em;
-		color: rgba(255,255,255,0.3);
-	}
-	
-	#copyright a
-	{
-		text-decoration: none;
-		color: rgba(255,255,255,0.6);
-	}
 
 /*********************************************************************************/
 /* Newsletter                                                                    */
 /*********************************************************************************/
 
-	#newsletter
-	{
-		overflow: hidden;
-		padding: 8em 0em;
-		background: #FFF;
-		text-align: center;
-	}
-	
-	#newsletter .title h2
-	{
-		color: rgba(0,0,0,0.8);
-	}
-	
-	#newsletter .content
-	{
-		width: 600px;
-		margin: 0px auto;
-	}
+
 	
 /*********************************************************************************/
 /* Portfolio                                                                     */
 /*********************************************************************************/
 
-	#portfolio
-	{
-	}
-	
-	#portfolio .box
-	{
-		text-align: center;
-		color: rgba(0,0,0,0.5);
-	}
-	
-	#portfolio h3
-	{
-		display: block;
-		padding-bottom: 1em;
-		text-transform: uppercase;
-		font-size: 1em;
-		color: rgba(0,0,0,0.6);
-	}
-
-	#portfolio .title
-	{
-		text-align: center;
-	}
-
-	#portfolio .title h2
-	{
-		color: rgba(0,0,0,0.8);
-	}
-
-	.column1,
-	.column2,
-	.column3,
-	.column4
-	{
-		width: 282px;
-	}
-	
-	.column1,
-	.column2,
-	.column3
-	{
-		float: left;
-		margin-right: 24px;
-	}
-	
-	.column4
-	{
-		float: right;
-	}
 
 	/* Responsive Design */
 	@media only screen and (max-width: 768px) {
 		body {
 			font-size: 10pt; /* Smaller font size for small devices */
-		}
-
-		/* Adjusting column layout for smaller screens */
-		.column1, .column2, .column3, .column4 {
-			width: auto;
-			float: none;
-			margin-right: 0;
 		}
 
 		/* Adjusting menu for smaller screens */
@@ -893,15 +665,6 @@
 			margin: 5px 0;
 		}
 
-		/* Adjusting header and logo size */
-		#logo h1 {
-			font-size: 2.5em;
-		}
-
-		/* Adjusting content padding for smaller screens */
-		#welcome .content, #newsletter .content {
-			padding: 0em 1em;
-		}
 	}
 
 	/* Additional media query for very small screens like mobile phones */
@@ -911,8 +674,5 @@
 			font-size: 9pt;
 		}
 
-		#logo h1 {
-			font-size: 2em;
-		}
 	}
 	
