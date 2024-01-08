@@ -1,5 +1,5 @@
 <?php
-include 'websitedb_connection.php';
+include '../websitedb_connection.php';
 include 'session.php';
 
 $conn = OpenCon();

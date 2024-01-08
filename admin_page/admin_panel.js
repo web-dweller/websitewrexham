@@ -3,7 +3,7 @@ const SESSION_EXPIRATION_TIME = 3600;
 const deleteEvent = async (eventId) => {
   const formData = new FormData();
   formData.append("eventId", eventId);
-  return await fetch("remove_event_by_id.php", {
+  return await fetch("../events/remove_event_by_id.php", {
     method: "POST",
     body: formData,
   }).then(() => location.reload());
@@ -82,16 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Initialize form submission handlers
-  handleFormSubmission("addEventForm", "add_event.php", "addEventResponse");
+  handleFormSubmission("addEventForm", "../events/add_event.php", "addEventResponse");
   handleFormSubmission(
     "sendNewsletterForm",
-    "email_sub.php",
+    "../subscribtion/email_sub.php",
     "sendNewsletterResponse"
   );
 
   // Function to load and display events list
   function loadEventsList() {
-    fetch("list_events.php")
+    fetch("../events/list_events.php")
       .then((response) => response.json())
       .then((data) => {
         const eventsTable = document.getElementById("eventsList");
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to load and display subscriber count
   function loadSubscriberCount() {
-    fetch("count_subs.php")
+    fetch("../subscribtion/count_subs.php")
       .then((response) => response.json())
       .then((data) => {
         document.getElementById("subscriberCount").textContent = data.row_count;
