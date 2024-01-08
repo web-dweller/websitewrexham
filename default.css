@@ -349,18 +349,22 @@
 		outline: 0;
 		color: #FFF;
 	}
-	
-	#menu li:hover a
-	{
-		background: rgba(237, 18, 37, 0.3);
-		border-radius: 8px;
+
+	#menu li a {
+		/* General styles for menu links */
+		border-radius: 8px; /* common style for all states */
+		transition: background-color 0.3s; /* smooth transition for background color */
 	}
-	
-	#menu .current_page_item a
-	{
-		background: #ED1A25;
-		border-radius: 8px;
-		color: #FFF;
+
+	#menu li:hover a {
+		/* Styles for hover */
+		background: rgba(237, 18, 37, 0.3); /* semi-transparent red on hover */
+	}
+
+	#menu .current_page_item a, #menu .current_page_item a:hover {
+		/* Specific style for the current page and prevent change on hover */
+		background: #ED1A25; /* solid red for current page */
+		color: #FFF; /* white text for current page */
 	}
 	
 
