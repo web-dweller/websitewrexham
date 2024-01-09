@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         data.forEach((event) => {
           contentHtml += `<p style="${
             event.event_date === today ? "color: green;" : "color: black;"
-          }">${event.event_name} - ${event.event_date}</p>`;
+          }">${event.event_name} - ${event.event_date} at
+          ${event.event_start_time.slice(0, -3)}-${event.event_end_time.slice(0,-3)}</p>`;
         });
         contentDiv.innerHTML = contentHtml;
       })

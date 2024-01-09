@@ -9,39 +9,38 @@ const deleteEvent = async (eventId) => {
   }).then(() => location.reload());
 };
 
-
 const redirectToLogin = () => {
-    window.location.href = "admin_login.html";
-}
+  window.location.href = "admin_login.html";
+};
 
 const checkSession = async () => {
-    let sessionId = localStorage.getItem("session_id");
-    if (!sessionId){
-        console.log('no session id')
-        return redirectToLogin()
+  let sessionId = localStorage.getItem("session_id");
+  if (!sessionId) {
+    console.log("no session id");
+    return redirectToLogin();
+  }
+  console.log(`session_id=${sessionId}`);
+  const formData = new FormData();
+  formData.append("session_id", sessionId);
+  return await fetch("check_session.php", {
+    method: "POST",
+    body: formData,
+  }).then((response) => {
+    if (response.status !== 200) {
+      console.error(response.status);
+      localStorage.removeItem("session_id");
+      redirectToLogin();
     }
-    console.log(`session_id=${sessionId}`)
-    const formData = new FormData();
-    formData.append("session_id", sessionId);
-    return await fetch("check_session.php", {
-        method: "POST",
-        body: formData,
-    }).then((response) => {
-        if (response.status !== 200){
-            console.error(response.status)
-            localStorage.removeItem("session_id");
-            redirectToLogin()
-        }
-    });
-}
+  });
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   // Generalized function for handling form submissions
 
   checkSession() &&
-  setInterval(async ()=>{
-      await checkSession()
-  }, 5000)
+    setInterval(async () => {
+      await checkSession();
+    }, 5000);
 
   function handleFormSubmission(formId, url, responseDivId) {
     document
@@ -82,7 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Initialize form submission handlers
-  handleFormSubmission("addEventForm", "../events/add_event.php", "addEventResponse");
+  handleFormSubmission(
+    "addEventForm",
+    "../events/add_event.php",
+    "addEventResponse"
+  );
   handleFormSubmission(
     "sendNewsletterForm",
     "../subscribtion/email_sub.php",
@@ -103,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <td>${event.id}</td>
                             <td>${event.event_name}</td>
                             <td>${event.event_date}</td>
+                            <td>${event.event_start_time}</td>
+                            <td>${event.event_end_time}</td>
                             <td>${event.event_desc}</td>
                             <td>
                                 <button 
@@ -119,6 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>ID</th>
                             <th>Name</th>
                             <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
                             <th>Description</th>
                             <th>Actions</th>
                         </tr>
