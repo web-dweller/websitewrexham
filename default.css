@@ -133,21 +133,15 @@ form ::-moz-focus-inner {
     font-weight: 400;
     font-size: 1.2em;
     color: #FFF;
-
-    border-color: #000000;
-
 }
 
 .email-button {
     font-size: 1.0em;
     text-align: center;
-    width: 30%;
     display: block; /* Make the button a block element */
     margin-top: 20px; /* Add space above the button */
     margin-left: auto; /* Center the button */
     margin-right: auto; /* Center the button */
-
-
 }
 
 .button.email-button {
