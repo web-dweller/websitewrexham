@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="admin_panel.css">
+    <link rel="stylesheet" href="admin_panel.css" />
+  </head>
+  <body>
+    <h1>Admin Panel</h1>
 
-</head>
-<body>
-<h1>Admin Panel</h1>
-
-<section>
-    <h2>Add Event to Events Calendar</h2>
-    <form id="addEventForm">
+    <section>
+      <h2>Add Event to Events Calendar</h2>
+      <form id="addEventForm">
         <label for="eventDate">Event Date:</label>
-        <input type="date" id="eventDate" name="eventDate" required>
+        <input type="date" id="eventDate" name="eventDate" required />
+
+        <label for="eventStartTime">Event Start Time:</label>
+        <input type="time" id="eventStartTime" name="eventStartTime" required />
+
+        <label for="eventEndTime">Event End Time:</label>
+        <input type="time" id="eventEndTime" name="eventEndTime" required />
 
         <label for="eventName">Event Name:</label>
-        <input type="text" id="eventName" name="eventName" required>
+        <input type="text" id="eventName" name="eventName" required />
 
         <label for="eventDescription">Event Description:</label>
-        <input type="text" id="eventDescription" name="eventDescription" required>
+        <input
+          type="text"
+          id="eventDescription"
+          name="eventDescription"
+          required
+        />
 
         <div class="button-response-container">
-            <button type="submit">Add Event</button>
-            <div id="addEventResponse" class="response"></div>
+          <button type="submit">Add Event</button>
+          <div id="addEventResponse" class="response"></div>
         </div>
-    </form>
-</section>
+      </form>
+    </section>
 
-<section>
-    <h2>Existing Events</h2>
-    <div id="eventsList">
+    <section>
+      <h2>Existing Events</h2>
+      <div id="eventsList">
         <!-- Server-side script to list events from MySQL database -->
-    </div>
-</section>
+      </div>
+    </section>
 
-<section>
-    <h2>Number of Email Newsletter Subscribers</h2>
-    <div id="subscriberCount">
+    <section>
+      <h2>Number of Email Newsletter Subscribers</h2>
+      <div id="subscriberCount">
         <!-- Server-side script to display number of subscribers -->
-    </div>
-</section>
+      </div>
+    </section>
 
-<section>
-    <h2>Send Email Newsletter</h2>
-    <form id="sendNewsletterForm">
+    <section>
+      <h2>Send Email Newsletter</h2>
+      <form id="sendNewsletterForm">
         <label for="newsletterContent">Newsletter Content:</label>
-        <textarea id="newsletterContent" name="newsletterContent" rows="10" cols="50" required></textarea>
+        <textarea
+          id="newsletterContent"
+          name="newsletterContent"
+          rows="10"
+          cols="50"
+          required
+        ></textarea>
 
         <div class="button-response-container">
-            <button type="submit">Send Newsletter</button>
-            <div id="sendNewsletterResponse" class="response"></div>
+          <button type="submit">Send Newsletter</button>
+          <div id="sendNewsletterResponse" class="response"></div>
         </div>
-    </form>
-</section>
+      </form>
+    </section>
 
-<script src="admin_panel.js"></script>
-
-</body>
+    <script src="admin_panel.js"></script>
+  </body>
 </html>
