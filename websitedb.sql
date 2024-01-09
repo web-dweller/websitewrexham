@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 07, 2024 at 07:51 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Хост: 127.0.0.1
+-- Час створення: Січ 09 2024 р., 19:58
+-- Версія сервера: 10.4.32-MariaDB
+-- Версія PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `websitedb`
+-- База даних: `websitedb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Структура таблиці `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Дамп даних таблиці `admin`
 --
 
 INSERT INTO `admin` (`id`, `login`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `login`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email`
+-- Структура таблиці `email`
 --
 
 CREATE TABLE `email` (
@@ -54,42 +54,43 @@ CREATE TABLE `email` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `email`
+-- Дамп даних таблиці `email`
 --
 
 INSERT INTO `email` (`email_id`, `email`, `first_name`, `last_name`) VALUES
-(1, 'sinelnik67@gmail.com', 'Andrii', 'Synelnyk'),
-(3, 'grimy.grigory1@gmail.com', 'Greg1', 'Grim1'),
-(4, 'kirill.grim@gmail.com', 'test', 'test');
+(1, 'sinelnik67@gmail.com', 'Andrii', 'Synelnyk');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `events`
+-- Структура таблиці `events`
 --
 
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
-  `event_name` varchar(255) DEFAULT NULL,
-  `event_desc` varchar(255) DEFAULT NULL,
-  `event_date` date DEFAULT NULL
+  `event_name` varchar(255) NOT NULL,
+  `event_desc` text DEFAULT NULL,
+  `event_date` date NOT NULL,
+  `event_start_time` time NOT NULL,
+  `event_end_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `events`
+-- Дамп даних таблиці `events`
 --
 
-INSERT INTO `events` (`id`, `event_name`, `event_desc`, `event_date`) VALUES
-(1, 'Meeting', 'Team brainstorming session', '2024-01-10'),
-(2, 'Conference', 'Annual industry conference', '2024-02-15'),
-(3, 'Workshop', 'Web development workshop', '2024-03-20'),
-(4, 'Seminar', 'Marketing strategies seminar', '2024-04-25'),
-(5, 'Party', 'Company anniversary celebration', '2024-05-30');
+INSERT INTO `events` (`id`, `event_name`, `event_desc`, `event_date`, `event_start_time`, `event_end_time`) VALUES
+(1, 'Conference on Innovation', 'Join us for an insightful conference on the latest innovations in technology and business.', '2024-02-15', '09:00:00', '17:00:00'),
+(2, 'Music Festival', 'Experience a night of live music performances featuring various artists and genres.', '2024-03-22', '18:30:00', '23:00:00'),
+(3, 'Art Exhibition Opening', 'Discover the beauty of contemporary art at our gallery opening event.', '2024-04-10', '19:00:00', '21:30:00'),
+(4, 'Community Workshop: Sustainability', 'Learn practical tips for a sustainable lifestyle and environmental conservation.', '2024-05-05', '14:00:00', '16:30:00'),
+(5, 'Food Tasting and Culinary Showcase', 'Savor the flavors of local and international cuisines in this delightful culinary event.', '2024-06-12', '12:00:00', '15:00:00'),
+(7, 'test_event', 'test_desc', '2024-01-10', '16:39:00', '17:39:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
+-- Структура таблиці `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -98,54 +99,62 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Дамп даних таблиці `sessions`
+--
+
+INSERT INTO `sessions` (`session_id`, `creation_time`) VALUES
+('9fcc3f98ed61a449', 1704671602),
+('dd536fa7e8ce64ba', 1704817083);
+
+--
+-- Індекси збережених таблиць
 --
 
 --
--- Indexes for table `admin`
+-- Індекси таблиці `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `email`
+-- Індекси таблиці `email`
 --
 ALTER TABLE `email`
   ADD PRIMARY KEY (`email_id`);
 
 --
--- Indexes for table `events`
+-- Індекси таблиці `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sessions`
+-- Індекси таблиці `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`session_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT для таблиці `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `email`
+-- AUTO_INCREMENT для таблиці `email`
 --
 ALTER TABLE `email`
-  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `email_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `events`
+-- AUTO_INCREMENT для таблиці `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
