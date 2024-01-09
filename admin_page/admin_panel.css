@@ -59,6 +59,7 @@ input[type="text"],
 input[type="number"],
 input[type="date"],
 input[type="password"],
+input[type="time"],
 textarea {
     width: 100%;
     padding: 10px;
@@ -103,5 +104,6 @@ th, td {
 }
 
 th {
-    width: 25%;
+    min-width: 1px;
+    max-width: 1000px;
 }
