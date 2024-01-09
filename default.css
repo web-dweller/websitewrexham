@@ -5,7 +5,7 @@
 	body {
 		margin: 0px;
 		padding: 0px;
-		background: #333333;
+		background: #3E3E3E;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 12pt;
 		font-weight: 400;
@@ -679,4 +679,14 @@
 		}
 
 	}
-	
+
+.map-section{
+	background: #ED1A25;
+}
+
+.section iframe {
+	width: 100%; /* Make the map responsive by setting width to 100% */
+	max-width: 1000px; /* Maximum width */
+	height: 400px; /* Adjust height as needed */
+	border: none; /* Remove the border */
+}
