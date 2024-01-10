@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("the_pub").textContent = data.the_pub;
         document.getElementById("board").textContent = data.board;
         switch (window.location.pathname) {
-          case "/websitewrexham/index.html": {
+          case "/myWebsite/index.html": {
             document.getElementById("welcome").textContent = data.welcome;
             document.getElementById("welcome_text").textContent =
               data.welcome_text;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("signup").value = data.signup;
             break;
           }
-          case "/websitewrexham/the-centre.html": {
+          case "/myWebsite/the-centre.html": {
             document.getElementById("welsh_centre").textContent =
               data.welsh_centre;
             document.getElementById("welsh_centre_text").textContent =
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
               data.centre_photo2;
             break;
           }
-          case "/websitewrexham/about-us.html": {
+          case "/myWebsite/about-us.html": {
             document.getElementById("about_us1").textContent = data.about_us1;
             document.getElementById("about_us1").innerHTML = document
               .getElementById("about_us1")
@@ -71,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("about_us5").textContent = data.about_us5;
             break;
           }
-          case "/websitewrexham/contact.html": {
+          case "/myWebsite/contact.html": {
             document.getElementById("contact1").textContent = data.contact;
             break;
           }
-          case "/websitewrexham/supporters.html": {
+          case "/myWebsite/supporters.html": {
             document.getElementById("supporters_text").textContent =
               data.supporters_text;
             break;
@@ -84,6 +84,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  const defaultLang = navigator.language.startsWith("en") ? "en" : "en"; //TODO logic with button to switch lang
-  loadLanguage(defaultLang);
+  function changeLanguage() {
+    const currentLang = localStorage.getItem('preferredLang') || 'en';
+    const newLang = currentLang === 'en' ? 'cy' : 'en';
+    localStorage.setItem('preferredLang', newLang);
+    updateLanguageIcon(newLang);
+    loadLanguage(newLang);
+  }
+
+  function updateLanguageIcon(lang) {
+    const langIcon = document.getElementById('currentLangIcon');
+    if (lang === 'en') {
+      langIcon.src = 'images/icons/united-kingdom.png';
+      langIcon.alt = 'EN';
+    } else {
+      langIcon.src = 'images/icons/website-icon.png'; // Path to your Welsh icon
+      langIcon.alt = 'CY';
+    }
+  }
+
+  const defaultLang = navigator.language.startsWith("en") ? "en" : "cy";
+  const savedLang = localStorage.getItem('preferredLang') || defaultLang;
+  updateLanguageIcon(savedLang);
+  loadLanguage(savedLang);
+
+  document.getElementById('langSwitch').addEventListener('click', changeLanguage);
 });

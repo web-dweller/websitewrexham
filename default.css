@@ -560,3 +560,17 @@ a:hover {
 .accordion .accordion-content.active + .accordion-title .arrow {
     transform: rotate(180deg);
 }
+
+#langSwitch img {
+    max-height: 16px; /* Adjust this value as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+#language-option a, #language-option span {
+    display: inline-block;
+    margin-left: 0.50em;
+
+
+    outline: 0;
+    color: #FFF;
+}
