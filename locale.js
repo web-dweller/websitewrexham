@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
       langIcon.src = 'images/icons/united-kingdom.png';
       langIcon.alt = 'EN';
     } else {
-      langIcon.src = 'images/icons/website-icon.png';
+      langIcon.src = 'images/icons/welsh-flag.jpg';
       langIcon.alt = 'CY';
     }
   }
