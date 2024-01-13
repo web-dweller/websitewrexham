@@ -309,7 +309,7 @@ form ::-moz-focus-inner {
 .section {
     vertical-align: top;
     width: 100%; /* Slightly less than half to fit two sections in one row */
-    background-color: #E8E8E8; /* Placeholder color */
+    background-color: #EDEDED; /* Placeholder color */
     padding: 20px;
     box-sizing: border-box;
     border-radius: 8px; /* Optional, for rounded corners */
@@ -318,8 +318,7 @@ form ::-moz-focus-inner {
 .support-button-section {
     flex-grow: 1;
     width: 100%; /* Slightly less than half to fit two sections in one row */
-    background-color: #FFFFFF; /* Placeholder color */
-    margin: 1%;
+    background-color: #EDEDED; /* Placeholder color */
     padding: 20px;
     box-sizing: border-box;
     border-radius: 8px; /* Optional, for rounded corners */
@@ -327,6 +326,10 @@ form ::-moz-focus-inner {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+}
+
+.centre-button {
+    background-color: #FFFFFF;
 }
 
 .section-wrapper2 {
@@ -556,7 +559,7 @@ a:hover {
     cursor: pointer;
     /*padding-left: 10px;*/
     /*padding-right: 10px;*/
-    background-color: #FFFFFF;
+    background-color: #EDEDED;
     /*border: 1px solid #ddd;*/
     display: flex;
     justify-content: space-between;
