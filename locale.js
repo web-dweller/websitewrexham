@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("the_pub").textContent = data.the_pub;
         document.getElementById("board").textContent = data.board;
         switch (window.location.pathname) {
+          case "/myWebsite/":
           case "/myWebsite/index.html": {
             document.getElementById("welcome").textContent = data.welcome;
             document.getElementById("welcome_text").textContent =
@@ -98,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
       langIcon.src = 'images/icons/united-kingdom.png';
       langIcon.alt = 'EN';
     } else {
-      langIcon.src = 'images/icons/website-icon.png'; // Path to your Welsh icon
+      langIcon.src = 'images/icons/website-icon.png';
       langIcon.alt = 'CY';
     }
   }
 
-  const defaultLang = navigator.language.startsWith("en") ? "en" : "cy";
+  const defaultLang = "cy";
   const savedLang = localStorage.getItem('preferredLang') || defaultLang;
   updateLanguageIcon(savedLang);
   loadLanguage(savedLang);
