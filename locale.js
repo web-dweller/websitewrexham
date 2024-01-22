@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("the_pub").textContent = data.the_pub;
         document.getElementById("board").textContent = data.board;
         switch (window.location.pathname) {
-          case "/myWebsite/":
-          case "/myWebsite/index.html": {
+          case "/SaithSerenWebsite/":
+          case "/SaithSerenWebsite/index.html": {
             document.getElementById("welcome").textContent = data.welcome;
             document.getElementById("welcome_text").textContent =
               data.welcome_text;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("signup").value = data.signup;
             break;
           }
-          case "/myWebsite/the-centre.html": {
+          case "/SaithSerenWebsite/the-centre.html": {
             document.getElementById("welsh_centre").textContent =
               data.welsh_centre;
             document.getElementById("welsh_centre_text").textContent =
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
               data.centre_photo2;
             break;
           }
-          case "/myWebsite/about-us.html": {
+          case "/SaithSerenWebsite/about-us.html": {
             document.getElementById("about_us1").textContent = data.about_us1;
             document.getElementById("about_us1").innerHTML = document
               .getElementById("about_us1")
@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("about_us5").textContent = data.about_us5;
             break;
           }
-          case "/myWebsite/contact.html": {
+          case "/SaithSerenWebsite/contact.html": {
             document.getElementById("contact1").textContent = data.contact;
             break;
           }
-          case "/myWebsite/supporters.html": {
+          case "/SaithSerenWebsite/supporters.html": {
             document.getElementById("supporters_text").textContent =
               data.supporters_text;
             break;
